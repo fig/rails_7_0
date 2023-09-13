@@ -36,6 +36,18 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 group :development do
+  # Automatic Ruby code style checking tool.
+  gem "rubocop", "~> 1.56"
+
+  # Automatic performance checking tool for Ruby code.
+  gem "rubocop-performance", "~> 1.19"
+
+  # Automatic Rails code style checking tool.
+  gem "rubocop-rails", "~> 2.21"
+
+  # Code style checking for RSpec files
+  gem "rubocop-rspec", "~> 2.24"
+
   # A debugging tool for your Ruby on Rails applications.
   gem "web-console"
 end
