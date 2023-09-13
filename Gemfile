@@ -34,6 +34,15 @@ gem "turbo-rails"
 group :development, :test do
   # Debugging functionality for Ruby
   gem "debug", platforms: %i[mri mingw x64_mingw]
+
+  # factory_bot_rails provides integration between factory_bot and rails 5.0 or newer
+  gem "factory_bot_rails", "~> 6.2"
+
+  # Easily generate fake data
+  gem "faker", "~> 3.2"
+
+  # RSpec for Rails
+  gem "rspec-rails", "~> 6.0", ">= 6.0.3"
 end
 group :development do
   # Automatic Ruby code style checking tool.
@@ -47,6 +56,9 @@ group :development do
 
   # Code style checking for RSpec files
   gem "rubocop-rspec", "~> 2.24"
+
+  # Guard gem for RSpec
+  gem "guard-rspec", require: false, git: "https://github.com/fig/guard-rspec.git", branch: "master"
 
   # A debugging tool for your Ruby on Rails applications.
   gem "web-console"
