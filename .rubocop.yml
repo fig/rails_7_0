@@ -5,11 +5,13 @@ require:
   - rubocop-rspec
 AllCops:
   Exclude:
+    - app/views/**/*.erb
     - bin/**/*
-    - tmp/**/*
+    - db/migrate/*.rb
+    - db/schema.rb
     - node_modules/**/*
-    - "**/*.erb"
-    - "**/db/**/*"
+    - tmp/**/*
+    - vendor/bundle/**/*
   EnabledByDefault: true
   NewCops: enable
 Bundler/GemComment:
@@ -59,6 +61,7 @@ Naming/MethodParameterName:
     - a
     - as
     - b
+    - to
     - x
     - "y"
     - z
@@ -149,9 +152,8 @@ Style/WhileUntilModifier:
 Style/YodaCondition:
   Enabled: false
 Rails/SkipsModelValidations:
-  Exclude:
-    - "/**/spec/**/*_spec.rb"
   AllowedMethods:
     - touch
+    - insert_all!
 Rails/DefaultScope:
   Enabled: false
