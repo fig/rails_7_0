@@ -11,11 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_10_02_000124) do
-  create_table "accounts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -44,39 +39,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_000124) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "creators", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "entries", force: :cascade do |t|
-    t.integer "account_id", null: false
-    t.integer "creator_id", null: false
-    t.string "entryable_type", null: false
-    t.integer "entryable_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_entries_on_account_id"
-    t.index ["creator_id"], name: "index_entries_on_creator_id"
-    t.index ["entryable_type", "entryable_id"], name: "index_entries_on_entryable"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string "subject"
-    t.text "body"
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.string "preview_index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "entries", "accounts"
-  add_foreign_key "entries", "creators"
 end
