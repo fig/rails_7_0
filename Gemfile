@@ -7,6 +7,9 @@ gem "bootsnap", require: false
 # Bundle and process CSS with Tailwind, Bootstrap, PostCSS, Sass in Rails via Node.js.
 gem "cssbundling-rails"
 
+# High-level wrapper for processing images for the web with ImageMagick or libvips.
+gem "image_processing", "~> 1.12"
+
 # Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
 gem "jsbundling-rails"
 
