@@ -1,6 +1,9 @@
 <h1>Editing video</h1>
 
-<%= render "form", video: @video %>
+<!-- turbo drive appears to be cacheing the preview image-->
+<div data-turbo="false">
+  <%= render "form", video: @video %>
+</div>
 
 <br>
 
